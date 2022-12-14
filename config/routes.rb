@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'render/index'
-
+  
   resources :reviews
   resources :skiareas
   resources :users
