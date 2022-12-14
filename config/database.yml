@@ -79,8 +79,12 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
+# production:
+#   <<: *default
+#   database: ski_weather_backend_production
+#   username: ski_weather_backend
+#   password: <%= ENV["SKI_WEATHER_BACKEND_DATABASE_PASSWORD"] %>
+
+  production:
   <<: *default
-  database: ski_weather_backend_production
-  username: ski_weather_backend
-  password: <%= ENV["SKI_WEATHER_BACKEND_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
